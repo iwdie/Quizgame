@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cv62j4m3vkxyb"]
+
+[ext_resource type="Script" path="res://prelude.gd" id="1_i452h"]
+[ext_resource type="Texture2D" uid="uid://bth0ien06cjls" path="res://Designer - Copy.jpeg" id="1_x1col"]
+[ext_resource type="FontFile" uid="uid://bq4rlnladwm11" path="res://GloriaRocha-Regular.otf" id="3_g3u1r"]
+[ext_resource type="Texture2D" uid="uid://bw3qlxec8q3gq" path="res://play_game.png" id="4_3koa7"]
+[ext_resource type="AudioStream" uid="uid://dcqwsd6oum8sq" path="res://Rise of spirit.ogg" id="5_bx04l"]
+[ext_resource type="AudioStream" uid="uid://ogq4i8bppms4" path="res://click-button-140881.mp3" id="6_espce"]
+
+[node name="prelude" type="Node2D"]
+script = ExtResource("1_i452h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -230.0
+offset_top = -47.0
+offset_right = 1505.0
+offset_bottom = 1073.0
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[node name="Designer-Copy" type="Sprite2D" parent="."]
+position = Vector2(554, 236)
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("1_x1col")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 28.0
+offset_top = 506.0
+offset_right = 1112.0
+offset_bottom = 634.0
+theme_override_fonts/normal_font = ExtResource("3_g3u1r")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(1011, 97)
+texture_normal = ExtResource("4_3koa7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bx04l")
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_espce")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
