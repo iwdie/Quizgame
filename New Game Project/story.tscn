@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cpegoal2i13cy"]
+[gd_scene load_steps=36 format=3 uid="uid://cpegoal2i13cy"]
 
 [ext_resource type="Script" path="res://story.gd" id="1_ihtlb"]
 [ext_resource type="Texture2D" uid="uid://cvorxu5fuller" path="res://Final/Background_0.png" id="1_vt0y2"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://4t0de1dwivlv" path="res://Run.png" id="6_08nnp"]
 [ext_resource type="Texture2D" uid="uid://c0ak7q3ltb3pm" path="res://Final/Salt.png" id="7_7jo5r"]
 [ext_resource type="AudioStream" uid="uid://c63ax5ekx8vll" path="res://song18.mp3" id="9_l1eyq"]
+[ext_resource type="Texture2D" uid="uid://bw3qlxec8q3gq" path="res://play_game.png" id="10_5ms3o"]
+[ext_resource type="Texture2D" uid="uid://ji2kajmrbabq" path="res://goleft.png" id="11_m62h1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0x4x"]
 texture = ExtResource("3_7up1f")
@@ -555,6 +557,11 @@ color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0, 0)
 
+[node name="Background1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(834, 166)
+scale = Vector2(1.81, 1.81)
+texture = ExtResource("1_vt0y2")
+
 [node name="Background0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(656, 269)
 scale = Vector2(1.81, 1.81)
@@ -661,6 +668,19 @@ offset_bottom = 816.0
 theme_override_constants/text_highlight_v_padding = 85
 theme_override_font_sizes/normal_font_size = 27
 text = "[USE ARROW KEY TO REACH TELEPORTATION STATUE]"
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 100
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ParallaxBackground2"]
+position = Vector2(1056, 584)
+texture_normal = ExtResource("10_5ms3o")
+action = "goforward"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="ParallaxBackground2"]
+position = Vector2(975, 574)
+texture_normal = ExtResource("11_m62h1")
+action = "gobackward"
 
 [connection signal="animation_finished" from="storylead/AnimatedSprite2D" to="storylead" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

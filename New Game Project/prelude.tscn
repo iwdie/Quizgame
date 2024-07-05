@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ogq4i8bppms4" path="res://click-button-140881.mp3" id="6_espce"]
 
 [node name="prelude" type="Node2D"]
+position = Vector2(155, 0)
 script = ExtResource("1_i452h")
 
 [node name="ColorRect" type="ColorRect" parent="."]

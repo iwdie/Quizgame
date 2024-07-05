@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://main_quiz.gd" id="1_6b7c1"]
 [ext_resource type="Texture2D" uid="uid://cexvmuul7jqmk" path="res://Game menus-01.png" id="1_76hxu"]
-[ext_resource type="Texture2D" uid="uid://bl3rymawra2ru" path="res://_7ceb3727-24f9-4c9c-a6b9-79d8d8bf22a7.jpg" id="2_7xo4j"]
+[ext_resource type="Texture2D" path="res://_7ceb3727-24f9-4c9c-a6b9-79d8d8bf22a7.jpg" id="2_7xo4j"]
 [ext_resource type="Texture2D" uid="uid://dnpg0se0gcncj" path="res://Dialogue border -01.png" id="2_fvp5k"]
-[ext_resource type="Texture2D" uid="uid://brgvtl7564bbc" path="res://_87572a20-583b-43c4-95d2-ccc13b826448.jpg" id="2_rir04"]
+[ext_resource type="Texture2D" path="res://_87572a20-583b-43c4-95d2-ccc13b826448.jpg" id="2_rir04"]
 [ext_resource type="Texture2D" uid="uid://cgtywnc5naicb" path="res://button1.png" id="3_6m3dl"]
 [ext_resource type="Texture2D" uid="uid://27atg4fey1qm" path="res://button2.png" id="4_0mrvh"]
-[ext_resource type="Texture2D" uid="uid://b54ims6x1lhn1" path="res://_753af9fd-6d6e-4141-81d8-30cc9395fa89.jpg" id="4_dryha"]
+[ext_resource type="Texture2D" path="res://_753af9fd-6d6e-4141-81d8-30cc9395fa89.jpg" id="4_dryha"]
 [ext_resource type="FontFile" uid="uid://bq4rlnladwm11" path="res://GloriaRocha-Regular.otf" id="4_rvo68"]
 [ext_resource type="PackedScene" uid="uid://cgm5553gkb2mr" path="res://character_body_2d.tscn" id="5_cohfy"]
 [ext_resource type="Texture2D" uid="uid://dpw6h7anl8th4" path="res://Necromancer_creativekind-Sheet.png" id="6_ojtm2"]
@@ -221,7 +221,7 @@ scale = Vector2(1.315, 1.315)
 texture = ExtResource("4_dryha")
 
 [node name="GameMenus-01" type="Sprite2D" parent="."]
-position = Vector2(1404, 243)
+position = Vector2(1336, 223)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("1_76hxu")
 
@@ -256,13 +256,13 @@ theme_override_fonts/normal_font = ExtResource("4_rvo68")
 theme_override_font_sizes/normal_font_size = 60
 text = "Herb used for lowering blood pressure"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="TouchScreenButton1" type="TouchScreenButton" parent="."]
 position = Vector2(39, 390)
 scale = Vector2(0.295, 0.295)
 texture_normal = ExtResource("3_6m3dl")
 texture_pressed = ExtResource("4_0mrvh")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TouchScreenButton"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TouchScreenButton1"]
 offset_left = 200.0
 offset_top = 132.0
 offset_right = 1068.0
@@ -350,7 +350,7 @@ scale = Vector2(1.82, 1.82)
 stream = ExtResource("9_j58dr")
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 1.7
+wait_time = 4.0
 one_shot = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -375,7 +375,7 @@ autoplay = true
 [connection signal="buttonpreesed" from="." to="." method="_on_buttonpreesed"]
 [connection signal="correctans" from="." to="." method="_on_correctans"]
 [connection signal="wrongans" from="." to="." method="_on_wrongans"]
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="TouchScreenButton1" to="." method="_on_touch_screen_button_1_pressed"]
 [connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
 [connection signal="pressed" from="TouchScreenButton3" to="." method="_on_touch_screen_button_3_pressed"]
 [connection signal="pressed" from="TouchScreenButton4" to="." method="_on_touch_screen_button_4_pressed"]
