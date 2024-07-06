@@ -1,19 +1,21 @@
-[gd_scene load_steps=39 format=3 uid="uid://hfgmof7jtaw2"]
+[gd_scene load_steps=42 format=3 uid="uid://hfgmof7jtaw2"]
 
 [ext_resource type="Script" path="res://main_quiz.gd" id="1_6b7c1"]
 [ext_resource type="Texture2D" uid="uid://cexvmuul7jqmk" path="res://Game menus-01.png" id="1_76hxu"]
-[ext_resource type="Texture2D" path="res://_7ceb3727-24f9-4c9c-a6b9-79d8d8bf22a7.jpg" id="2_7xo4j"]
 [ext_resource type="Texture2D" uid="uid://dnpg0se0gcncj" path="res://Dialogue border -01.png" id="2_fvp5k"]
-[ext_resource type="Texture2D" path="res://_87572a20-583b-43c4-95d2-ccc13b826448.jpg" id="2_rir04"]
 [ext_resource type="Texture2D" uid="uid://cgtywnc5naicb" path="res://button1.png" id="3_6m3dl"]
 [ext_resource type="Texture2D" uid="uid://27atg4fey1qm" path="res://button2.png" id="4_0mrvh"]
-[ext_resource type="Texture2D" path="res://_753af9fd-6d6e-4141-81d8-30cc9395fa89.jpg" id="4_dryha"]
 [ext_resource type="FontFile" uid="uid://bq4rlnladwm11" path="res://GloriaRocha-Regular.otf" id="4_rvo68"]
 [ext_resource type="PackedScene" uid="uid://cgm5553gkb2mr" path="res://character_body_2d.tscn" id="5_cohfy"]
 [ext_resource type="Texture2D" uid="uid://dpw6h7anl8th4" path="res://Necromancer_creativekind-Sheet.png" id="6_ojtm2"]
 [ext_resource type="AudioStream" uid="uid://dm0mcbs62f1o7" path="res://643723__snowfightstudios__devil-demon_you-are-wrong.wav" id="8_y6iqh"]
 [ext_resource type="AudioStream" uid="uid://dmn2fh1tfa8hh" path="res://377220__dneproman__mystique.wav" id="9_j58dr"]
+[ext_resource type="Texture2D" uid="uid://4y0kcqycsiqi" path="res://monster.png" id="12_1hexl"]
+[ext_resource type="Texture2D" uid="uid://crpr1wb8iae0a" path="res://demonhealthunder.png" id="13_1xay1"]
 [ext_resource type="AudioStream" uid="uid://syepacmjnk1c" path="res://battleThemeA.mp3" id="14_fod3a"]
+[ext_resource type="Texture2D" uid="uid://c66npkr65pslu" path="res://demonhealthprogress.png" id="14_rjdx7"]
+[ext_resource type="Texture2D" uid="uid://lc33402l3iu8" path="res://progressnature (2).png" id="15_7g1jq"]
+[ext_resource type="Texture2D" uid="uid://bequ1fu2lg5lk" path="res://Gemini_Generated_Image_hmac4bhmac4bhmac-removebg-preview (1).png" id="16_ufb81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8o1h"]
 atlas = ExtResource("6_ojtm2")
@@ -190,35 +192,33 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
+[sub_resource type="Theme" id="Theme_lfjen"]
+
 [node name="main_quiz" type="Node2D"]
 script = ExtResource("1_6b7c1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -18.0
-offset_top = -60.0
-offset_right = 2118.0
-offset_bottom = 716.0
+offset_top = -97.0
+offset_right = 2136.0
+offset_bottom = 679.0
 color = Color(0.0980392, 0.168627, 0.211765, 1)
 
 [node name="87572a20-583b-43c4-95d2-ccc13b826448" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(577, 564)
 scale = Vector2(1.12891, 1.12891)
-texture = ExtResource("2_rir04")
 
 [node name="7Ceb3727-24f9-4c9c-a6b9-79d8d8Bf22a7" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 position = Vector2(597, 449)
 scale = Vector2(1.15417, 0.874878)
-texture = ExtResource("2_7xo4j")
 
 [node name="9a36f446-530b-470f-ae2e-1Fda1f75f80d" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0.290196, 0.290196, 0.290196, 1)
 position = Vector2(663, 361)
 scale = Vector2(1.315, 1.315)
-texture = ExtResource("4_dryha")
 
 [node name="GameMenus-01" type="Sprite2D" parent="."]
 position = Vector2(1336, 223)
@@ -350,7 +350,7 @@ scale = Vector2(1.82, 1.82)
 stream = ExtResource("9_j58dr")
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.1
 one_shot = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -371,6 +371,30 @@ text = "Score:"
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_fod3a")
 autoplay = true
+
+[node name="Monster" type="Sprite2D" parent="."]
+position = Vector2(1250, 132)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("12_1hexl")
+
+[node name="demonhealth" type="TextureProgressBar" parent="Monster"]
+offset_left = 206.25
+offset_top = -250.0
+offset_right = 1106.25
+offset_bottom = 650.0
+theme = SubResource("Theme_lfjen")
+value = 100.0
+texture_under = ExtResource("13_1xay1")
+texture_progress = ExtResource("14_rjdx7")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Monster"]
+offset_left = 250.0
+offset_top = 215.625
+offset_right = 750.0
+offset_bottom = 715.625
+value = 100.0
+texture_under = ExtResource("15_7g1jq")
+texture_progress = ExtResource("16_ufb81")
 
 [connection signal="buttonpreesed" from="." to="." method="_on_buttonpreesed"]
 [connection signal="correctans" from="." to="." method="_on_correctans"]
