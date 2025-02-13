@@ -1,4 +1,5 @@
 A Godot-powered educational quiz game featuring multiple-choice questions (MCQs) with a climate action theme. The game integrates interactive mechanics where:
+On playstore:https://play.google.com/store/apps/details?id=com.wissen.qgtesting
 
 A wizard attacks if the player answers correctly, while a demon attacks for wrong answers.
 GDScript-powered logic for question handling, animations, and game state management.
