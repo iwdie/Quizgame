@@ -1,3 +1,4 @@
+This is just a prototype, not the final codebase for the game. It is not optimized and will be improved later.
 A Godot-powered educational quiz game featuring multiple-choice questions (MCQs) with a climate action theme. 
 On playstore:https://play.google.com/store/apps/details?id=com.wissen.qgtesting
 
